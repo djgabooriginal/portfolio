@@ -1,5 +1,7 @@
 name: Build and Deploy
 on: [push]
+env:
+  process.env.CI : false
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
