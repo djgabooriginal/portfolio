@@ -1,12 +1,12 @@
 import React from 'react'
-import { Routes, Route, HashRouter, Link } from 'react-router-dom'
+import { Routes, Route, HashRouter, Link, BrowserRouter } from 'react-router-dom'
 import Home from './components/Home'
 import { InfoPage } from './components/Info'
 import { PortfolioPage } from './components/Portfolio'
 
 function App() {
   return (
-    <HashRouter basename="/">
+    <BrowserRouter basename="/portfolio">
       <div>
         <ul>
           <li>
@@ -22,7 +22,7 @@ function App() {
           <Route path="/portfolio" element={<PortfolioPage />} />
         </Routes>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
