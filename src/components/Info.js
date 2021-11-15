@@ -1,9 +1,8 @@
-import { Main, Paragraph } from 'grommet'
+import { Box, Main, Paragraph } from 'grommet'
 import React from 'react'
 import { theme } from '../theme'
 import { AppHeader } from './AppHeader'
 import { Cover } from './Cover'
-
 
 export const InfoPage = (props) => {
   const parr = `Director de producción de eventos corporativos y de entretenimiento,
@@ -30,16 +29,25 @@ export const InfoPage = (props) => {
   el desarrollo de nuevas ideas.
   `
   return (
-    <div className="full-page">
-      
-      <AppHeader />
-      <Cover /> 
-      <div>
+    <div>
+      <Box pad={{ horizontal: 'medium', vertical: 'small' }} gridArea="header">
+        <AppHeader />
+        <Cover />
+      </Box>
+      <div className="main-class">
         <Main background={theme.global.colors.charcoal} pad="medium">
-          <Paragraph size={'20px'} fill>{parr}</Paragraph>
-          <Paragraph size={'20px'} fill>{parr2}</Paragraph>
-          <Paragraph size={'20px'} fill>{parr3}</Paragraph>
-          <Paragraph size={'20px'} fill>{parr4}</Paragraph>
+          <Paragraph size={'20px'} fill>
+            {parr}
+          </Paragraph>
+          <Paragraph size={'20px'} fill>
+            {parr2}
+          </Paragraph>
+          <Paragraph size={'20px'} fill>
+            {parr3}
+          </Paragraph>
+          <Paragraph size={'20px'} fill>
+            {parr4}
+          </Paragraph>
         </Main>
       </div>
     </div>
