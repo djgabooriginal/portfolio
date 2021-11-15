@@ -60,7 +60,7 @@ const Home = props => {
                 primary
                 active
                 label="Portfolio"
-                onClick={()=> navigate('/portfolio')}
+                onClick={()=> navigate('/gallery')}
               />
               <Button
                 style={buttonStyle}
