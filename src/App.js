@@ -14,9 +14,9 @@ function App() {
   return (
     <BrowserRouter basename="/portfolio">
       <Routes>
-        <Route exact path="/portfolio" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/info" element={<InfoPage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/gallery" element={<PortfolioPage />} />
       </Routes>
     </BrowserRouter>
   )
