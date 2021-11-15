@@ -1,22 +1,18 @@
 import React from 'react'
-import { Box, Card, CardHeader, Grommet } from 'grommet'
-import { theme } from './theme'
-
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './components/Home'
+import { InfoPage } from './components/Info'
+import { PortfolioPage } from './components/Portfolio'
 
 function App() {
   return (
-    <Grommet theme={theme}>
-      <Box pad="large" gap="medium" height="large" width="medium">
-        <div className="card-container">
-        <Card >
-          <CardHeader>
-            {'Gabriel Martinez – DJ Gabo'}
-          </CardHeader>
-        </Card>
-        </div>
-      </Box>
-    </Grommet>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="info" element={<InfoPage />} />
+        <Route path="portfolio" element={<PortfolioPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
