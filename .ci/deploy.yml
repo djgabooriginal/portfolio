@@ -11,6 +11,7 @@ jobs:
         run: |
           npm install
           npm run predeploy
+          npm run deploy
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
