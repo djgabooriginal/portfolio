@@ -11,23 +11,22 @@ import {
 } from 'grommet'
 import { theme } from '../theme'
 import { Chat, FacebookOption, LinkedinOption } from 'grommet-icons'
-
+import { ReactComponent as Wsp } from '../assets/images/wsp.svg'
 import { buttonStyle, card } from './HomeStyles'
 import './styles.css'
 
+const submitHandle = (url) => {
+  window.location.replace(`${url}`)
+}
 
 
 const Home = props => {
   const navigate = useNavigate()
   const renderFbIcon = () => (
-    <FacebookOption color={theme.global.colors.charcoal} size="medium" />
+    <FacebookOption color={theme.global.colors.babyPodwer} size="medium" />
   )
-  const renderLinkIcon = () => (
-    <LinkedinOption color={theme.global.colors.charcoal} size="medium" />
-  )
-
   const renderWspIcon = () => (
-    <Chat color={theme.global.colors.charcoal} size="medium" />
+    <Wsp fill={theme.global.colors.babyPodwer} />
   )
   return (
     <Grommet theme={theme}>
@@ -39,14 +38,14 @@ const Home = props => {
           />
         </video>
         <div className="card-container">
-          <Card background="rgba(250,250,250,0.6)" style={card}>
+          <Card background="rgba(64, 67, 78,0.6)" style={card}>
             <CardHeader style={{ flexDirection: 'column' }}>
-              <Heading color={theme.global.colors.richBlack} size="medium" level={2}>
+              <Heading color={theme.global.colors.babyPodwer} size="medium" level={2}>
                 {'Gabriel Martinez'}
               </Heading>
               <div>
                 <Heading
-                  color={theme.global.colors.richBlack}
+                  color={theme.global.colors.babyPodwer}
                   size="medium"
                   level={4}
                 >
@@ -57,6 +56,7 @@ const Home = props => {
             <CardBody>
               <Button
                 style={buttonStyle}
+                hoverIndicator="light-1"
                 primary
                 active
                 label="Portfolio"
@@ -67,31 +67,28 @@ const Home = props => {
                 primary
                 active
                 label="Info"
+                hover={theme.global.colors.wine}
                 onClick={()=> navigate('/info')}
               />
               <Grid
                 justify="center"
                 gap="small"
                 margin="20px"
-                columns="64px"
+                columns="80px"
                 rows="xsmall"
               >
                 <Button
+                  style={{backgroundColor: 'transparent'}}
                   plain
                   icon={renderFbIcon()}
-                  onClick={() => {}}
+                  onClick={() => submitHandle('https://www.facebook.com/groups/recursosvmix')}
                   primary
                 />
                 <Button
-                  plain
-                  icon={renderLinkIcon()}
-                  onClick={() => {}}
-                  primary
-                />
-                <Button
+                  style={{backgroundColor: 'transparent'}}
                   plain
                   icon={renderWspIcon()}
-                  onClick={() => {}}
+                  onClick={() => submitHandle('https://wa.me/573008046817')}
                   primary
                 />
               </Grid>
