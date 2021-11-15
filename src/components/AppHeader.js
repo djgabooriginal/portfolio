@@ -9,8 +9,8 @@ export const AppHeader = props => {
     <div className="full-page">
     <Header background={theme.global.colors.charcoal} pad="medium">
     <Nav direction="row">
-      <Anchor color={theme.global.colors.babyPodwer} label="Home" href="/" />
-      <Anchor color={theme.global.colors.babyPodwer} label="Info" href="/info" />
+      <Anchor color={theme.global.colors.babyPodwer} label="Home" href="/portofolio" />
+      <Anchor color={theme.global.colors.babyPodwer} label="Info" href="/portofolio/info" />
     </Nav>
   </Header>
   </div>
