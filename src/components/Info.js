@@ -1,4 +1,4 @@
-import { Avatar, Box, Heading, Grid, Main, Paragraph } from 'grommet'
+import { Avatar,Heading, Main, Paragraph } from 'grommet'
 import React, { useState } from 'react'
 import { theme } from '../theme'
 import { getWindowDimensions } from '../utils/dimensions'

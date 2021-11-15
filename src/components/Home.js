@@ -10,7 +10,7 @@ import {
   Heading,
 } from 'grommet'
 import { theme } from '../theme'
-import { Chat, FacebookOption, LinkedinOption } from 'grommet-icons'
+import { FacebookOption } from 'grommet-icons'
 import { ReactComponent as Wsp } from '../assets/images/wsp.svg'
 import { buttonStyle, card } from './HomeStyles'
 import './styles.css'
