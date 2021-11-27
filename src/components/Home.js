@@ -9,7 +9,7 @@ import {
   Grommet,
   Heading,
 } from 'grommet'
-import { theme } from '../theme'
+import { customTheme } from '../theme'
 import { FacebookOption } from 'grommet-icons'
 import { ReactComponent as Wsp } from '../assets/images/wsp.svg'
 import { buttonStyle, card } from './HomeStyles'
@@ -23,13 +23,13 @@ const submitHandle = (url) => {
 const Home = props => {
   const navigate = useNavigate()
   const renderFbIcon = () => (
-    <FacebookOption color={theme.global.colors.babyPodwer} size="medium" />
+    <FacebookOption color={customTheme.global.colors.babyPodwer} size="medium" />
   )
   const renderWspIcon = () => (
-    <Wsp fill={theme.global.colors.babyPodwer} />
+    <Wsp fill={customTheme.global.colors.babyPodwer} />
   )
   return (
-    <Grommet theme={theme}>
+    <Grommet background="dark-2" theme={customTheme}>
       <div className="video-background">
         <video autoPlay muted loop id="myVideo">
           <source
@@ -40,12 +40,12 @@ const Home = props => {
         <div className="card-container">
           <Card background="rgba(64, 67, 78,0.6)" style={card}>
             <CardHeader style={{ flexDirection: 'column' }}>
-              <Heading color={theme.global.colors.babyPodwer} size="medium" level={2}>
+              <Heading color={customTheme.global.colors.babyPodwer} size="medium" level={2}>
                 {'Gabriel Martinez'}
               </Heading>
               <div>
                 <Heading
-                  color={theme.global.colors.babyPodwer}
+                  color={customTheme.global.colors.babyPodwer}
                   size="medium"
                   level={4}
                 >
@@ -67,7 +67,7 @@ const Home = props => {
                 primary
                 active
                 label="Info"
-                hover={theme.global.colors.wine}
+                hover={customTheme.global.colors.wine}
                 onClick={()=> navigate('/info')}
               />
               <Grid

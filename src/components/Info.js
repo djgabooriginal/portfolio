@@ -1,6 +1,6 @@
 import { Box, Main, Paragraph } from 'grommet'
 import React from 'react'
-import { theme } from '../theme'
+import { customTheme } from '../theme'
 import { AppHeader } from './AppHeader'
 import { Cover } from './Cover'
 
@@ -35,7 +35,7 @@ export const InfoPage = (props) => {
         <Cover />
       </Box>
       <div className="main-class">
-        <Main background={theme.global.colors.charcoal} pad="medium">
+        <Main background={customTheme.global.colors.charcoal} pad="medium">
           <Paragraph size={'20px'} fill>
             {parr}
           </Paragraph>

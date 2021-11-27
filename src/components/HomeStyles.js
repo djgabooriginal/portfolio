@@ -1,4 +1,4 @@
-import { theme } from "../theme"
+import { customTheme } from "../theme"
 
 export const card = {
   padding: 30,
@@ -10,6 +10,6 @@ export const buttonStyle = {
   marginLeft: 10,
   marginRight: 10,
   backgroundColor: 'transparent',
-  color: theme.global.colors.babyPodwer,
-  borderColor: theme.global.colors.babyPodwer,
+  color: customTheme.global.colors.babyPodwer,
+  borderColor: customTheme.global.colors.babyPodwer,
 }

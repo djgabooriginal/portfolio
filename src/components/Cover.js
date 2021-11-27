@@ -1,6 +1,6 @@
 import { Avatar,Heading, Main, Paragraph } from 'grommet'
 import React, { useState } from 'react'
-import { theme } from '../theme'
+import { customTheme } from '../theme'
 import { getWindowDimensions } from '../utils/dimensions'
 import { AppHeader } from './AppHeader'
 import { resumeContainer, titleContainer } from './InfoStyles'
@@ -33,7 +33,7 @@ export const Cover = (props) => {
       <div className="cover-container">
         <div className="profile-title">
           <Heading
-            color={theme.global.colors.babyPodwer}
+            color={customTheme.global.colors.babyPodwer}
             style={titleContainer}
             size={fontSize}
           >
@@ -45,7 +45,7 @@ export const Cover = (props) => {
         </div>
         <div className="profile-resume">
           <Heading
-            color={theme.global.colors.babyPodwer}
+            color={customTheme.global.colors.babyPodwer}
             style={resumeContainer}
             size={subtitleSize}
           >
