@@ -21,7 +21,7 @@ export const PortfolioPage = (props) => {
   return (
     <div>
     <AppHeader />
-    <Cover />
+    <Cover alt />
     <Tabs >
       <Tab title="Set Virtuales">
         <Box pad="medium">

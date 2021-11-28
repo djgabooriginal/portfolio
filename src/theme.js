@@ -118,14 +118,16 @@ export const customTheme = deepMerge(grommet, {
   },
   tab: {
     active: {
-      background: { color: 'gray' },
-      color: 'accent-4',
+      background: 'transparent',
+      color: '#946500',
+      font: { weight: 'bold' },
     },
-    background: 'dark-2',
+    background: 'light-3',
     border: undefined,
-    color: 'white',
+    color: 'dark-1',
     hover: {
-      background: 'dark-1',
+      background: 'dark-4',
+      color: '#FFDD94',
     },
     margin: undefined,
     pad: {
@@ -135,10 +137,10 @@ export const customTheme = deepMerge(grommet, {
     },
   },
   tabs: {
-    background: 'dark-2',
+    background: 'light-3',
     gap: 'large',
     header: {
-      background: 'dark-2',
+      background: 'light-3',
       extend: ({ theme }) => css`
         padding: 10px;
       `,

@@ -12,12 +12,13 @@ import { customTheme } from '../theme'
 import { getWindowDimensions } from '../utils/dimensions'
 import { AppHeader } from './AppHeader'
 import { resumeContainer, titleContainer } from './InfoStyles'
-
-import coverImage from '../assets/images/cover.png'
 import { Channel, Console } from 'grommet-icons'
 
+import coverImage from '../assets/images/cover.png'
+import coverAlt from '../assets/images/coverAlt.png'
+
 export const Cover = (props) => {
-  const { darkMode } = props
+  const { darkMode, alt } = props
   const [size, setSize] = useState()
   const [ iconSize, setIconSize ] = useState()
   const [windowDimensions, setWindowDimensions] = useState(
@@ -28,7 +29,6 @@ export const Cover = (props) => {
     : customTheme.global.colors.yellow.light
 
   const width = windowDimensions.width
-
   const setNewSize = () => {
     switch (true) {
       case width <= 400:
@@ -47,12 +47,9 @@ export const Cover = (props) => {
 
   }
 
-  
-
   useEffect(() => {
     setNewSize()
   }, [width])
-
 
   return (
     <Box fill>
@@ -69,7 +66,7 @@ export const Cover = (props) => {
       <Image
         style={{ width: '100%', padding: 0, margin: 0, top: 0, left: 0 }}
         fill
-        src={coverImage}
+        src={alt ? coverAlt : coverImage}
       />
     </Box>
   )
