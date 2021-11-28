@@ -12,9 +12,9 @@ function App() {
     <Grommet theme={customTheme} themeMode={darkMode ? 'dark' : 'light'}>
       <BrowserRouter basename="/portfolio">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/info" element={<InfoPage />} />
-          <Route path="/gallery" element={<PortfolioPage />} />
+          <Route path="/" element={<Home darkMode={darkMode} />} />
+          <Route path="/info" element={<InfoPage darkMode={darkMode} />} />
+          <Route path="/gallery" element={<PortfolioPage darkMode={darkMode} />} />
         </Routes>
       </BrowserRouter>
     </Grommet>
