@@ -5,6 +5,8 @@ import { AppHeader } from './AppHeader'
 import { Cover } from './Cover'
 
 export const InfoPage = (props) => {
+  const { darkMode } = props
+  const bcColor = darkMode ? customTheme.global.colors.grayLight.dark : customTheme.global.colors.grayLight.light
   const parr = `Director de producción de eventos corporativos y de entretenimiento,
   con su experiencia en todos los campos dentro de una produccion
   general, logrará que su evento sea recordado y recomendado.`
@@ -30,12 +32,13 @@ export const InfoPage = (props) => {
   `
   return (
     <div>
-      <Box pad={{ horizontal: 'medium', vertical: 'small' }} gridArea="header">
+      <Box pad={{ horizontal: 'xxsmall', vertical: 'xxsmall' }} gridArea="header">
         <AppHeader />
-        <Cover />
+        
       </Box>
-      <div className="main-class">
-        <Main background={customTheme.global.colors.charcoal} pad="medium">
+      <Cover />
+      <div>
+        <Main background={bcColor} pad="medium">
           <Paragraph size={'20px'} fill>
             {parr}
           </Paragraph>

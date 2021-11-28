@@ -1,6 +1,7 @@
 html, body, .Login-component {
   height: 100%;
-  background-color: #555555;
+  background-color: #40434E;
+  margin: 0;
 }
 .full-page {
   position: fixed;
@@ -34,86 +35,60 @@ html, body, .Login-component {
   min-height: 100%;
 }
 
-.avatar-container {
- padding: 20px;
-}
 
-.cover-container {
-  width: 100%;
-  height: 550px;
-  background-image: url('../assets/images/estudio.png');
-  padding-top: 30px;
-  align-items: center;
-}
-
-.avatar-content {
-  margin-left: 47%;
-}
 .profile-title {
+  position: absolute;
   text-align: center;
-  max-width: 100%;
+  left: 25%;
+  top: 25%;
 }
-.profile-resume {
- text-align: center;
-}
+
 
 .main-class {
   margin-top: 550px;
 }
 
-@media (max-width: 400px) {
-  .cover-container {
-    height: 220px;
-    padding-top: 3px;
-    margin-top: 30px;
-    background-size: cover;
-  }
-  .avatar-content {
-    margin-left: 40%;
-  }
-  .main-class {
-    margin-top: 220px;
+@media (max-width: 480px) {
+  .profile-title {
+    top: 0;
+    left: 0;
   }
 }
 
-@media (min-width: 401px) and (max-width: 800px) {
-  .cover-container {
-    height: 286px;
-    margin-top: 30px;
-    background-size: cover;
-  }
-  .avatar-content {
-    margin-left: 40%;
-  }
-  .main-class {
-    margin-top: 286px;
+@media (min-width: 481px) and (max-width: 767px) {
+  .profile-title {
+    top: 0;
+    padding-top: 45px;
+    left: 0;
   }
 }
 
-@media (min-width: 801px) and (max-width: 1200px) {
-  .cover-container {
-    height: 286px;
-    margin-top: 30px;
-    background-size: cover;
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .profile-title {
+    left: 10%;
+    top: 12%;
+    font-size: 24px;
   }
-  .avatar-content {
-    margin-left: 40%;
+  
+}
+@media (min-width: 1024px) {
+  .profile-title {
+    left: 17%;
+    top: 15%;
   }
-  .main-class {
-    margin-top: 286px;
+ }
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .profile-title {
+    left: 25%;
+    top: 25%;
   }
 }
 
-@media (min-width: 1201px) and (max-width: 1400px) {
-  .cover-container {
-    height: 502px;
-    margin-top: 30px;
-    background-size: cover;
-  }
-  .avatar-content {
-    margin-left: 45%;
-  }
-  .main-class {
-    margin-top: 502px;
+@media (min-width: 1401px) {
+  .profile-title {
+    left: 35%;
+    top: 40%;
   }
 }

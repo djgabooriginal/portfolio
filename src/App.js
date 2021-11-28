@@ -7,8 +7,9 @@ import { PortfolioPage } from './components/Portfolio/Portfolio'
 import { customTheme } from './theme'
 
 function App() {
+  const [darkMode, setDarkMode] = React.useState(false)
   return (
-    <Grommet theme={customTheme} background="dark-2">
+    <Grommet theme={customTheme} themeMode={darkMode ? 'dark' : 'light'}>
       <BrowserRouter basename="/portfolio">
         <Routes>
           <Route path="/" element={<Home />} />

@@ -21,6 +21,7 @@ const submitHandle = (url) => {
 
 
 const Home = props => {
+  const { darkMode } = props
   const navigate = useNavigate()
   const renderFbIcon = () => (
     <FacebookOption color={customTheme.global.colors.babyPodwer} size="medium" />
@@ -29,7 +30,7 @@ const Home = props => {
     <Wsp fill={customTheme.global.colors.babyPodwer} />
   )
   return (
-    <Grommet background="dark-2" theme={customTheme}>
+    <Grommet background="light-4" theme={customTheme}>
       <div className="video-background">
         <video autoPlay muted loop id="myVideo">
           <source
@@ -55,15 +56,12 @@ const Home = props => {
             </CardHeader>
             <CardBody>
               <Button
-                style={buttonStyle}
-                hoverIndicator="light-1"
                 primary
                 active
                 label="Portfolio"
                 onClick={()=> navigate('/gallery')}
               />
               <Button
-                style={buttonStyle}
                 primary
                 active
                 label="Info"

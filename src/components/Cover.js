@@ -1,59 +1,76 @@
-import { Avatar,Heading, Main, Paragraph } from 'grommet'
-import React, { useState } from 'react'
+import {
+  Avatar,
+  Box,
+  Distribution,
+  Heading,
+  Image,
+  Main,
+  Paragraph,
+} from 'grommet'
+import React, { useEffect, useState } from 'react'
 import { customTheme } from '../theme'
 import { getWindowDimensions } from '../utils/dimensions'
 import { AppHeader } from './AppHeader'
 import { resumeContainer, titleContainer } from './InfoStyles'
 
+import coverImage from '../assets/images/cover.png'
+import { Channel, Console } from 'grommet-icons'
+
 export const Cover = (props) => {
-  const src =
-    'https://scontent.fmex36-1.fna.fbcdn.net/v/t1.6435-9/38790254_153448055537783_248247421786652672_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=0-1B2tzUaBwAX_wddMm&tn=InxzIKivSI8X82uQ&_nc_ht=scontent.fmex36-1.fna&oh=85e7381fd63b01ab14e74f41e2fc82a2&oe=61B88AB2'
-  const borderSmall = { color: 'white', size: 'medium' }
+  const { darkMode } = props
+  const [size, setSize] = useState()
+  const [ iconSize, setIconSize ] = useState()
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions(),
   )
-  let size
-  let fontSize
-  let subtitleSize
+  const fontColor = darkMode
+    ? customTheme.global.colors.yellow.dark
+    : customTheme.global.colors.yellow.light
+
   const width = windowDimensions.width
 
-  if (width <= 400) {
-    size = 'large'
-    fontSize = '18px'
-    subtitleSize = '16px'
-  } else if (400 < width <= 800) {
-    size = '3xl'
-  } else {
-    size = '4xl'
+  const setNewSize = () => {
+    switch (true) {
+      case width <= 400:
+        setSize('large')
+        setIconSize('small')
+        break;
+      case 401 < width && width <= 800:
+        setSize('2xl')
+        setIconSize('medium')
+        break;
+      default:
+        setSize('3xl')
+        setIconSize('xlarge')
+        break
+    }
+
   }
 
+  
+
+  useEffect(() => {
+    setNewSize()
+  }, [width])
+
+
   return (
-    <div className="full-page">
-      <AppHeader />
-      <div className="cover-container">
-        <div className="profile-title">
-          <Heading
-            color={customTheme.global.colors.babyPodwer}
-            style={titleContainer}
-            size={fontSize}
-          >
-            Gabriel Martinez
-          </Heading>
-        </div>
-        <div className="avatar-content">
-          <Avatar border={borderSmall} size={size} src={src} />
-        </div>
-        <div className="profile-resume">
-          <Heading
-            color={customTheme.global.colors.babyPodwer}
-            style={resumeContainer}
-            size={subtitleSize}
-          >
-            Director de Eventos, Productor Musical y Audiovisual, Streaming,
-            Mapping, VMix, Diseñador de escenarios
-          </Heading>
-        </div>
+    <Box fill>
+      <div className="profile-title">
+        <Channel color={fontColor} size={iconSize} />
+        <Heading level={1} size={size} color={fontColor}>
+          Gabriel Martinez
+        </Heading>
+        <Heading level={3} size={size} color={fontColor}>
+          Director de Eventos, Productor Musical y Audiovisual, Streaming,
+          Mapping, VMix, Diseñador de escenarios
+        </Heading>
       </div>
-    </div>
+      <Image
+        style={{ width: '100%', padding: 0, margin: 0, top: 0, left: 0 }}
+        fill
+        src={coverImage}
+      />
+    </Box>
   )
 }

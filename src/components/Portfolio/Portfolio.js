@@ -19,6 +19,9 @@ export const PortfolioPage = (props) => {
     </Box>
   ))
   return (
+    <div>
+    <AppHeader />
+    <Cover />
     <Tabs >
       <Tab title="Set Virtuales">
         <Box pad="medium">
@@ -31,5 +34,6 @@ export const PortfolioPage = (props) => {
         </Box>
       </Tab>
     </Tabs>
+    </div>
   )
 }

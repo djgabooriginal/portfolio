@@ -13,6 +13,8 @@ import picnic2 from '../../assets/images/picnic2.jpeg'
 import pioneer from '../../assets/images/pioneer.jpeg'
 import record from '../../assets/images/record.jpeg'
 import streaming from '../../assets/images/streaming.jpeg'
+import show from '../../assets/images/show.jpeg'
+import stage from '../../assets/images/stage.jpeg'
 import workstation from '../../assets/images/workstation.jpeg'
 
 export const Streaming = (props) => {
@@ -28,6 +30,8 @@ export const Streaming = (props) => {
     { image: pioneer, id: 'pioneer' },
     { image: record, id: 'record' },
     { image: streaming, id: 'streaming' },
+    { image: show, id: 'show' },
+    { image: stage, id: 'stage' },
     { image: workstation, id: 'workstation' },
   ]
 

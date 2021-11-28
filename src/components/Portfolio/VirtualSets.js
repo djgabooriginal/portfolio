@@ -9,8 +9,6 @@ import forum from '../../assets/images/forum.jpg'
 import invitados from '../../assets/images/Invitados.png'
 import lobby from '../../assets/images/lobby.png'
 import medicina from '../../assets/images/medicina.png'
-import show from '../../assets/images/show.jpeg'
-import stage from '../../assets/images/stage.jpeg'
 import tv from '../../assets/images/tv.jpeg'
 
 export const VirtualSets = (props) => {
@@ -21,8 +19,6 @@ export const VirtualSets = (props) => {
     { image: invitados, id: 'invitados' },
     { image: lobby, id: 'lobby' },
     { image: medicina, id: 'medicina' },
-    { image: show, id: 'show' },
-    { image: stage, id: 'stage' },
     { image: tv, id: 'tv' },
   ]
 
