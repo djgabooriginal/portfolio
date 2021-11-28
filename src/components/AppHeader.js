@@ -17,7 +17,7 @@ export const AppHeader = (props) => {
     <div className="full-page">
       <Header background={headerColor} pad="small">
         <Nav direction="row">
-          <Anchor color={anchorColor} label="Home" onClick={() => navigate('/info')}/>
+          <Anchor color={anchorColor} label="Home" onClick={() => navigate('/')}/>
           <Anchor color={anchorColor} label="Info" onClick={() => navigate('/info')} />
           <Anchor
             color={anchorColor}
