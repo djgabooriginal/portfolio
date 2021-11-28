@@ -19,12 +19,17 @@ const submitHandle = (url) => {
   window.location.replace(`${url}`)
 }
 
-
-const Home = props => {
+const Home = (props) => {
   const { darkMode } = props
+  const fontColor = darkMode
+    ? customTheme.global.colors.yellow.dark
+    : customTheme.global.colors.yellow.light
   const navigate = useNavigate()
   const renderFbIcon = () => (
-    <FacebookOption color={customTheme.global.colors.babyPodwer} size="medium" />
+    <FacebookOption
+      color={customTheme.global.colors.babyPodwer}
+      size="medium"
+    />
   )
   const renderWspIcon = () => (
     <Wsp fill={customTheme.global.colors.babyPodwer} />
@@ -41,12 +46,16 @@ const Home = props => {
         <div className="card-container">
           <Card background="rgba(64, 67, 78,0.6)" style={card}>
             <CardHeader style={{ flexDirection: 'column' }}>
-              <Heading color={customTheme.global.colors.babyPodwer} size="medium" level={2}>
+              <Heading
+                color={fontColor}
+                size="medium"
+                level={2}
+              >
                 {'Gabriel Martinez'}
               </Heading>
               <div>
                 <Heading
-                  color={customTheme.global.colors.babyPodwer}
+                  color={fontColor}
                   size="medium"
                   level={4}
                 >
@@ -59,14 +68,14 @@ const Home = props => {
                 primary
                 active
                 label="Portfolio"
-                onClick={()=> navigate('/gallery')}
+                onClick={() => navigate('/gallery')}
               />
               <Button
                 primary
                 active
                 label="Info"
                 hover={customTheme.global.colors.wine}
-                onClick={()=> navigate('/info')}
+                onClick={() => navigate('/info')}
               />
               <Grid
                 justify="center"
@@ -76,14 +85,16 @@ const Home = props => {
                 rows="xsmall"
               >
                 <Button
-                  style={{backgroundColor: 'transparent'}}
+                  style={{ backgroundColor: 'transparent' }}
                   plain
                   icon={renderFbIcon()}
-                  onClick={() => submitHandle('https://www.facebook.com/groups/recursosvmix')}
+                  onClick={() =>
+                    submitHandle('https://www.facebook.com/groups/recursosvmix')
+                  }
                   primary
                 />
                 <Button
-                  style={{backgroundColor: 'transparent'}}
+                  style={{ backgroundColor: 'transparent' }}
                   plain
                   icon={renderWspIcon()}
                   onClick={() => submitHandle('https://wa.me/573008046817')}
