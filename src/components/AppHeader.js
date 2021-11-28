@@ -2,8 +2,10 @@ import React from 'react'
 import { Anchor, Header, Nav } from 'grommet'
 import { customTheme } from '../theme'
 import './styles.css'
+import { useNavigate } from 'react-router'
 
 export const AppHeader = (props) => {
+  const navigate = useNavigate()
   const { darkMode } = props
   const anchorColor = darkMode
     ? customTheme.global.colors.yellow.dark
@@ -15,8 +17,8 @@ export const AppHeader = (props) => {
     <div className="full-page">
       <Header background={headerColor} pad="small">
         <Nav direction="row">
-          <Anchor color={anchorColor} label="Home" href="/portfolio/" />
-          <Anchor color={anchorColor} label="Info" href="/portfolio/info/" />
+          <Anchor color={anchorColor} label="Home" onClick={() => navigate('/info')}/>
+          <Anchor color={anchorColor} label="Info" onClick={() => navigate('/info')} />
           <Anchor
             color={anchorColor}
             label="Gallery"
