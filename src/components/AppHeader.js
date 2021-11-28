@@ -16,11 +16,11 @@ export const AppHeader = (props) => {
       <Header background={headerColor} pad="small">
         <Nav direction="row">
           <Anchor color={anchorColor} label="Home" href="/portfolio/" />
-          <Anchor color={anchorColor} label="Info" href="/portfolio/info" />
+          <Anchor color={anchorColor} label="Info" href="/portfolio/info/" />
           <Anchor
             color={anchorColor}
             label="Gallery"
-            href="/portfolio/gallery"
+            href="/portfolio/gallery/"
           />
         </Nav>
       </Header>
