@@ -69,6 +69,7 @@ const Home = (props) => {
                 active
                 label="Portfolio"
                 onClick={() => navigate('/gallery')}
+                onKeyPress={() => navigate('/gallery')}
               />
               <Button
                 primary
@@ -76,6 +77,7 @@ const Home = (props) => {
                 label="Info"
                 hover={customTheme.global.colors.wine}
                 onClick={() => navigate('/info')}
+                onKeyPress={() => navigate('/info')}
               />
               <Grid
                 justify="center"

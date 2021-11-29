@@ -6,18 +6,11 @@ import { AppHeader } from '../AppHeader'
 import { Cover } from '../Cover'
 import { VirtualSets } from './VirtualSets'
 import { Streaming } from './Streaming'
+import { VirtualSetsVideos } from './VirtualSetsVideos'
+import { Videos } from './Videos'
 
 export const PortfolioPage = (props) => {
   const videos = []
-
-  const listAnimalsBoxes = videos.map((vid) => (
-    <Box align="center" pad="large">
-      <Video {...props}>
-        <source src="small.mp4" type="video/mp4" />
-        <source src={vid} type="video/mp4" />
-      </Video>
-    </Box>
-  ))
   return (
     <div>
     <AppHeader />
@@ -28,9 +21,19 @@ export const PortfolioPage = (props) => {
           <VirtualSets />
         </Box>
       </Tab>
+      <Tab title="Set Virtuales (Videos)">
+        <Box pad="medium">
+          <VirtualSetsVideos />
+        </Box>
+      </Tab>
       <Tab title="Producción/Streaming">
         <Box pad="medium">
           <Streaming />
+        </Box>
+      </Tab>
+      <Tab title="Videos">
+        <Box pad="medium">
+          <Videos />
         </Box>
       </Tab>
     </Tabs>
