@@ -13,8 +13,8 @@ function App() {
       <BrowserRouter basename="/portfolio">
         <Routes>
           <Route path="/" element={<Home darkMode={darkMode} />} />
-          <Route path="/info" element={<InfoPage darkMode={darkMode} />} />
-          <Route path="/gallery" element={<PortfolioPage darkMode={darkMode} />} />
+          <Route path="/info/" element={<InfoPage darkMode={darkMode} />} />
+          <Route path="/gallery/" element={<PortfolioPage darkMode={darkMode} />} />
         </Routes>
       </BrowserRouter>
     </Grommet>

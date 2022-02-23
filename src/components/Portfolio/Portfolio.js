@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Box, Main, Video, Image, Tab, Tabs, Grommet } from 'grommet'
+import React, { useState } from 'react'
+import { Box, Tab, Tabs } from 'grommet'
 import { Lightbox } from 'react-modal-image'
 import { theme } from '../../theme'
 import './styles.css'
@@ -36,10 +36,7 @@ import workstation from '../../assets/images/workstation.jpeg'
 export const PortfolioPage = (props) => {
   const videos = []
   const [popUp, setPopUp] = useState(false)
-  const [open, setOpen] = useState()
-  const [isVideoOpen, setVideoOpen] = useState(false)
   const [image, setImage] = useState()
-  const [video, setVideo] = useState()
   const closeLightbox = () => {
     setPopUp(!popUp)
   }
