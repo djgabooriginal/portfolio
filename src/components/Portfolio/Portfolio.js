@@ -48,7 +48,7 @@ export const PortfolioPage = (props) => {
       <Lightbox
         medium={image}
         large={image}
-        alt="Hello World!"
+        alt="Image"
         onClose={() => closeLightbox()}
       />
     )
