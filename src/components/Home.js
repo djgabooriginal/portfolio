@@ -13,8 +13,10 @@ import { customTheme } from '../theme'
 import { FacebookOption } from 'grommet-icons'
 import { ReactComponent as Wsp } from '../assets/images/wsp.svg'
 import { buttonStyle, card } from './HomeStyles'
-import awards from '../assets/videos/awards.mp4'
+import gris from '../assets/videos/gris.mp4'
+import vertical from '../assets/videos/grisvertical.mp4'
 import './styles.css'
+import { useEffect, useState } from 'react/cjs/react.development'
 
 const submitHandle = (url) => {
   window.location.replace(`${url}`)
@@ -22,6 +24,10 @@ const submitHandle = (url) => {
 
 const Home = (props) => {
   const { darkMode } = props
+  const [background, setBackground] = useState(
+    window.screen.orientation.type.includes('landscape') ? gris : vertical,
+  )
+
   const fontColor = darkMode
     ? customTheme.global.colors.yellow.dark
     : customTheme.global.colors.yellow.light
@@ -36,31 +42,26 @@ const Home = (props) => {
     <Wsp fill={customTheme.global.colors.babyPodwer} />
   )
 
+  useEffect(() => {
+    setBackground(
+      window.screen.orientation.type.includes('landscape') ? gris : vertical,
+    )
+  }, [window.screen.orientation])
+
   return (
     <Grommet background="light-4" theme={customTheme}>
       <div className="video-background">
         <video autoPlay muted loop id="myVideo">
-          <source
-            src={awards}
-            type="video/mp4"
-          />
+          <source src={gris} type="video/mp4" />
         </video>
         <div className="card-container">
           <Card background="rgba(64, 67, 78,0.6)" style={card}>
             <CardHeader style={{ flexDirection: 'column' }}>
-              <Heading
-                color={fontColor}
-                size="medium"
-                level={2}
-              >
+              <Heading color={fontColor} size="medium" level={2}>
                 {'Gabriel Martinez'}
               </Heading>
               <div>
-                <Heading
-                  color={fontColor}
-                  size="medium"
-                  level={4}
-                >
+                <Heading color={fontColor} size="medium" level={4}>
                   {'Events Manager'}
                 </Heading>
               </div>
