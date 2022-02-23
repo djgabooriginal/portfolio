@@ -13,6 +13,7 @@ import { customTheme } from '../theme'
 import { FacebookOption } from 'grommet-icons'
 import { ReactComponent as Wsp } from '../assets/images/wsp.svg'
 import { buttonStyle, card } from './HomeStyles'
+import awards from '../assets/videos/awards.mp4'
 import './styles.css'
 
 const submitHandle = (url) => {
@@ -34,12 +35,13 @@ const Home = (props) => {
   const renderWspIcon = () => (
     <Wsp fill={customTheme.global.colors.babyPodwer} />
   )
+
   return (
     <Grommet background="light-4" theme={customTheme}>
       <div className="video-background">
         <video autoPlay muted loop id="myVideo">
           <source
-            src={'http://techslides.com/demos/sample-videos/small.webm'}
+            src={awards}
             type="video/mp4"
           />
         </video>

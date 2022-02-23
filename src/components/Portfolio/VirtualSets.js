@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.css'
-
 
 // List of images
 import capture from '../../assets/images/capture.jpg'
@@ -12,6 +11,12 @@ import medicina from '../../assets/images/medicina.png'
 import tv from '../../assets/images/tv.jpeg'
 
 export const VirtualSets = (props) => {
+  const [openPopUp, setPopUp] = useState()
+  const { open, setImage } = props
+  const popUp = image => {
+    open(!openPopUp)
+    setImage(image)
+  }
   const images = [
     { image: capture, id: 'capture' },
     { image: entrada, id: 'entrada' },
@@ -23,7 +28,11 @@ export const VirtualSets = (props) => {
   ]
 
   const imagesList = images.map((img) => {
-    return <img src={img.image} key={img.id} />
+    return (
+      <div onClick={() => popUp(img.image)}>
+        <img src={img.image} key={img.id} />
+      </div>
+    )
   })
 
   return <div className="image-list">{imagesList}</div>
