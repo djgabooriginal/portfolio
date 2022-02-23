@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import {
   Button,
@@ -16,7 +16,6 @@ import { buttonStyle, card } from './HomeStyles'
 import gris from '../assets/videos/gris.mp4'
 import vertical from '../assets/videos/grisvertical.mp4'
 import './styles.css'
-import { useEffect, useState } from 'react/cjs/react.development'
 
 const submitHandle = (url) => {
   window.location.replace(`${url}`)

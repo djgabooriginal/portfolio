@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.css'
-
 
 // List of images
 import confe from '../../assets/images/confe.jpeg'
@@ -18,8 +17,13 @@ import stage from '../../assets/images/stage.jpeg'
 import workstation from '../../assets/images/workstation.jpeg'
 
 export const Streaming = (props) => {
+  const [openPopUp, setPopUp] = useState()
+  const { open, setImage } = props
+  const popUp = (image) => {
+    open(!openPopUp)
+    setImage(image)
+  }
   const images = [
-
     { image: confe, id: 'confe' },
     { image: coservatorio, id: 'coservatorio' },
     { image: desayuno, id: 'desayuno' },
@@ -36,7 +40,11 @@ export const Streaming = (props) => {
   ]
 
   const imagesList = images.map((img) => {
-    return <img src={img.image} key={img.id} />
+    return (
+      <div onClick={() => popUp(img.image)}>
+        <img src={img.image} key={img.id} />
+      </div>
+    )
   })
 
   return <div className="image-list">{imagesList}</div>
