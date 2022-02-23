@@ -10,7 +10,7 @@ import {
   Heading,
 } from 'grommet'
 import { customTheme } from '../theme'
-import { FacebookOption } from 'grommet-icons'
+import { FacebookOption, LinkedinOption } from 'grommet-icons'
 import { ReactComponent as Wsp } from '../assets/images/wsp.svg'
 import { buttonStyle, card } from './HomeStyles'
 import gris from '../assets/videos/gris.mp4'
@@ -33,13 +33,18 @@ const Home = (props) => {
   const navigate = useNavigate()
   const renderFbIcon = () => (
     <FacebookOption
-      color={customTheme.global.colors.babyPodwer}
+      color={customTheme.global.colors.yellow.light}
       size="medium"
     />
   )
   const renderWspIcon = () => (
-    <Wsp fill={customTheme.global.colors.babyPodwer} />
+    <Wsp fill={'#FFDD94'} />
   )
+
+  const renderLinkedIn = () => (
+    <LinkedinOption color={customTheme.global.colors.yellow.light} />
+  )
+
 
   useEffect(() => {
     setBackground(
@@ -48,7 +53,7 @@ const Home = (props) => {
   }, [window.screen.orientation])
 
   return (
-    <Grommet background="light-4" theme={customTheme}>
+    <Grommet background="light-2" theme={customTheme}>
       <div className="video-background">
         <video autoPlay muted loop id="myVideo">
           <source src={gris} type="video/mp4" />
@@ -84,7 +89,7 @@ const Home = (props) => {
               <Grid
                 justify="center"
                 gap="small"
-                margin="20px"
+                margin="10px"
                 columns="80px"
                 rows="xsmall"
               >
@@ -102,6 +107,15 @@ const Home = (props) => {
                   plain
                   icon={renderWspIcon()}
                   onClick={() => submitHandle('https://wa.me/573008046817')}
+                  primary
+                />
+                <Button
+                  style={{ backgroundColor: 'transparent' }}
+                  plain
+                  icon={renderLinkedIn()}
+                  onClick={() =>
+                    submitHandle('https://www.linkedin.com/in/gabriel-martinez-zapata-375952232/')
+                  }
                   primary
                 />
               </Grid>
